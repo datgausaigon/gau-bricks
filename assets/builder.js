@@ -38,7 +38,7 @@
     /** StructureEditDragGuard (lite)
      */
     const shouldBlock = el =>
-        el.matches('#bricks-structure .structure-item .title input.label:not(.readonly)');
+        el.matches('#bricks-structure .structure-item .title input:not(.readonly)');
 
     const stop = e => {
         if (shouldBlock(e.target)) e.stopPropagation();
