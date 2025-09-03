@@ -16,14 +16,14 @@ Its main goal is to refine the editing interface, adding small enhancements to m
 - Cửa sổ bật lên (Popup) cho bảng chọn màu (Color Palette)
 - Tối ưu đổi tên phần tử (Element) trong bảng điều khiển Cấu trúc (Structure Panel)
 - Tùy chọn chỉnh thêm thanh trượt (Scrollbar) cho bảng điều khiển (Panel) trong Builder
-- Cửa sổ bật lên (Popup) cho Element Text (Text Edit – TinyMCE)
+- Cửa sổ bật lên (Popup) cho Element Rich Text (Text Edit – TinyMCE)
 - Tùy chọn chỉnh giao diện Việt Nam (Vietnam Theme cho Builder)
 
 🇬🇧
 - Popup for the Color Palette selector
 - Optimized element renaming in the Structure Panel
 - Optional scrollbar customization for Builder panels
-- Popup for the Text Element (Text Edit – TinyMCE)
+- Popup for the Element Rich Text (Text Edit – TinyMCE)
 - Optional Vietnamese UI theme for the Builder  
 
 ---
