@@ -10,6 +10,24 @@ Its main goal is to refine the editing interface, adding small enhancements to m
 
 ---  
 
+## 📋 Bảng hỗ trợ / Compatibility Table
+
+🇻🇳  
+| Thành phần      | Phiên bản yêu cầu | Đã kiểm tra với        |
+|-----------------|------------------|------------------------|
+| PHP             | ≥ 8.2            | 8.2.x                  |
+| WordPress       | ≥ 6.8.2          | 6.8.2                  |
+| Bricks Builder  | 2.0.2                | Đã test với child theme |
+
+🇬🇧  
+| Component       | Minimum Required | Tested With             |
+|-----------------|------------------|-------------------------|
+| PHP             | ≥ 8.2            | 8.2.x                   |
+| WordPress       | ≥ 6.8.2          | 6.8.2                   |
+| Bricks Builder  | 2.0.2                | Tested with child theme |
+
+---  
+
 ## ⚙️ Các tính năng / Features
 
 :vietnam:  
@@ -28,7 +46,7 @@ Its main goal is to refine the editing interface, adding small enhancements to m
 
 ---
 
-## 🔌 Hướng dẫn sử dụng Filter / How to use Filters
+## 🛠️ Hướng dẫn sử dụng Filter / How to use Filters
 
 :vietnam:    
 Child theme cung cấp các filter để bật/tắt tính năng.  
