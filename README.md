@@ -1,12 +1,12 @@
 # 🐻 Gấu Bricks — Child Theme for Bricks Builder
 
 :vietnam:  
-Gấu Bricks là child theme được phát triển để tối ưu trải nghiệm khi sử dụng **Bricks Builder**.  
-Mục tiêu chính là tinh chỉnh giao diện soạn thảo, bổ sung các tiện ích nhỏ gọn, giúp quá trình thiết kế và phát triển website thuận tiện và chính xác hơn.  
+Gấu Bricks là child theme được phát triển để tối ưu trải nghiệm khi sử dụng [Bricks Builder](https://bricksbuilder.io/).  
+Mục tiêu chính là tinh chỉnh các tính năng trong trình dựng trang, bổ sung các tiện ích nhỏ gọn, giúp quá trình thiết kế và phát triển website thuận tiện và chính xác hơn.  
 
 :uk:  
-Gấu Bricks is a child theme designed to optimize the experience with **Bricks Builder**.  
-Its main goal is to refine the editing interface, adding small enhancements to make the design and development process smoother and more precise.  
+Gấu Bricks is a child theme designed to optimize the experience with [Bricks Builder](https://bricksbuilder.io/).  
+Its main goal is to refine the page builder features and add small, useful enhancements to make the process of designing and developing websites more convenient and accurate.
 
 ---  
 
@@ -85,6 +85,6 @@ add_filter( 'gau/bricks/enable_custom_element_text', '__return_true' );
 By default, these filters return `false` (disabled). Use `__return_true` to activate.
 
 ---
-
-Thanks  
+Chúc mọi điều tốt đẹp.  
+Thanks.  
 🐻
