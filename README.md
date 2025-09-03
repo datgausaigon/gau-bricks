@@ -59,7 +59,7 @@ add_filter( 'gau/bricks/enable_builder_vietnam_theme', '__return_true' );
 // Bật scrollbar tùy chỉnh cho panel
 add_filter( 'gau/bricks/enable_builder_panel_scrollbar', '__return_true' );
 
-// Bật fullscreen cho TinyMCE trong Element Text
+// Bật tối ưu Element Text
 add_filter( 'gau/bricks/enable_custom_element_text', '__return_true' );
 ```
 
@@ -78,7 +78,7 @@ add_filter( 'gau/bricks/enable_builder_vietnam_theme', '__return_true' );
 // Enable custom scrollbar for Builder panels
 add_filter( 'gau/bricks/enable_builder_panel_scrollbar', '__return_true' );
 
-// Enable fullscreen for TinyMCE in the Text Element
+// Enable Custom Element Text
 add_filter( 'gau/bricks/enable_custom_element_text', '__return_true' );
 ```
 
