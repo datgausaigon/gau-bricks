@@ -17,7 +17,7 @@ Its main goal is to refine the editing interface, adding small enhancements to m
 |-----------------|------------------|------------------------|
 | PHP             | ≥ 8.2            | 8.2.x                  |
 | WordPress       | ≥ 6.8.2          | 6.8.2                  |
-| Bricks Builder  | 2.0.2                | Đã test với child theme |
+| Bricks Builder  | 2.0.2                | Đã kiểm |
 
 🇬🇧  
 | Component       | Minimum Required | Tested With             |
