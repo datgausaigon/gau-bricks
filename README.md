@@ -13,18 +13,18 @@ Its main goal is to refine the editing interface, adding small enhancements to m
 ## 📋 Bảng hỗ trợ / Compatibility Table
 
 🇻🇳  
-| Thành phần      | Phiên bản yêu cầu | Đã kiểm tra với        |
+| Thành phần      | Phiên bản yêu cầu | Đã kiểm tra với       |
 |-----------------|------------------|------------------------|
 | PHP             | ≥ 8.2            | 8.2.x                  |
 | WordPress       | ≥ 6.8.2          | 6.8.2                  |
-| Bricks Builder  | 2.0.2                | Đã kiểm |
+| Bricks Builder  | 2.0.2            | Đã kiểm                |
 
 🇬🇧  
 | Component       | Minimum Required | Tested With             |
 |-----------------|------------------|-------------------------|
 | PHP             | ≥ 8.2            | 8.2.x                   |
 | WordPress       | ≥ 6.8.2          | 6.8.2                   |
-| Bricks Builder  | 2.0.2                | Tested with child theme |
+| Bricks Builder  | 2.0.2            | Tested with child theme |
 
 ---  
 
@@ -78,7 +78,7 @@ add_filter( 'gau/bricks/enable_builder_vietnam_theme', '__return_true' );
 // Enable custom scrollbar for Builder panels
 add_filter( 'gau/bricks/enable_builder_panel_scrollbar', '__return_true' );
 
-// Enable Custom Element Text
+// Enable Element Text optimization
 add_filter( 'gau/bricks/enable_custom_element_text', '__return_true' );
 ```
 
