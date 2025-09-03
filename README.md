@@ -42,7 +42,7 @@ add_filter( 'gau/bricks/enable_builder_vietnam_theme', '__return_true' );
 add_filter( 'gau/bricks/enable_builder_panel_scrollbar', '__return_true' );
 
 // Bật fullscreen cho TinyMCE trong Element Text
-add_filter( 'gau/bricks/enable_element_text_fullscreen', '__return_true' );
+add_filter( 'gau/bricks/enable_custom_element_text', '__return_true' );
 ```
 
 Mặc định các filter trả về `false` (tắt). Dùng `__return_true` để bật.
@@ -61,7 +61,7 @@ add_filter( 'gau/bricks/enable_builder_vietnam_theme', '__return_true' );
 add_filter( 'gau/bricks/enable_builder_panel_scrollbar', '__return_true' );
 
 // Enable fullscreen for TinyMCE in the Text Element
-add_filter( 'gau/bricks/enable_element_text_fullscreen', '__return_true' );
+add_filter( 'gau/bricks/enable_custom_element_text', '__return_true' );
 ```
 
 By default, these filters return `false` (disabled). Use `__return_true` to activate.
