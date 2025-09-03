@@ -1,0 +1,15 @@
+#bricks-structure, #bricks-panel-inner {
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-color: transparent transparent;
+    scrollbar-width: thin;
+}
+
+#bricks-panel-inner {
+    margin-right: 10px;
+}
+
+#bricks-panel-inner:hover,
+#bricks-structure:hover {
+    scrollbar-color: var(--builder-color-accent) var(--builder-bg-3);
+}

@@ -1,0 +1,34 @@
+.mce-toolbar .mce-btn:has(.mce-i-fullscreen) {
+    float: right;
+}
+
+.wp-editor-wrap.tmce-active:has(.mce-tinymce.mce-container.mce-panel.mce-fullscreen) {
+    position: fixed;
+    width: 60%;
+    height: 60vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    z-index: 100010;
+}
+
+.wp-editor-wrap.tmce-active:has(.mce-tinymce.mce-container.mce-panel.mce-fullscreen) .wp-editor-container,
+.wp-editor-wrap.tmce-active:has(.mce-tinymce.mce-container.mce-panel.mce-fullscreen) .mce-edit-area.mce-stack-layout-item,
+.wp-editor-wrap.tmce-active:has(.mce-tinymce.mce-container.mce-panel.mce-fullscreen) iframe {
+    height: 100% !important;
+}
+
+.wp-editor-wrap.tmce-active:has(.mce-tinymce.mce-container.mce-panel.mce-fullscreen) .mce-container-body.mce-stack-layout {
+    height: calc(100% - 75px) !important;
+}
+
+.wp-editor-wrap.tmce-active:has(.mce-tinymce.mce-container.mce-panel.mce-fullscreen) .wp-editor-tools {
+    background: var(--builder-bg-3);
+    border-radius: 8px 8px 0 0;
+}
+
+.wp-editor-wrap.tmce-active:has(.mce-tinymce.mce-container.mce-panel.mce-fullscreen) .mce-fullscreen {
+    position: relative !important;
+    height: 100% !important;
+}
