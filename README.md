@@ -6,8 +6,10 @@ Mục tiêu chính là tinh chỉnh giao diện soạn thảo, bổ sung các ti
 
 🇬🇧  
 Gấu Bricks is a child theme designed to optimize the experience with **Bricks Builder**.  
-Its main goal is to refine the editing interface, adding small enhancements to make the design and development process smoother and more precise.
----
+Its main goal is to refine the editing interface, adding small enhancements to make the design and development process smoother and more precise.  
+
+---  
+
 ## ⚙️ Các tính năng / Features
 
 🇻🇳
