@@ -2,11 +2,11 @@
 
 <img width="1200" height="900" alt="screenshot" src="https://github.com/user-attachments/assets/764bcd6b-d807-43c5-8c7c-490ef4687821" />  
 
-:vietnam:  
+🇻🇳  
 Gấu Bricks là child theme được phát triển để tối ưu trải nghiệm khi sử dụng [Bricks Builder](https://bricksbuilder.io/).  
 Mục tiêu chính là tinh chỉnh các tính năng trong trình dựng trang, bổ sung các tiện ích nhỏ gọn, giúp quá trình thiết kế và phát triển website thuận tiện và chính xác hơn.  
 
-:uk:  
+🇬🇧  
 Gấu Bricks is a child theme designed to optimize the experience with [Bricks Builder](https://bricksbuilder.io/).  
 Its main goal is to refine the page builder features and add small, useful enhancements to make the process of designing and developing websites more convenient and accurate.
 
@@ -29,22 +29,48 @@ Its main goal is to refine the page builder features and add small, useful enhan
 | Bricks Builder  | 2.0.2            | Gấu Bricks v1.0.1       |
 
 ---  
+  
+## 🗄️ Cơ sở dữ liệu & Tính toàn vẹn dữ liệu / Database & Data Integrity  
+
+🇻🇳  
+| Thành phần | Trạng thái |
+|------------|------------|
+| Bảng dữ liệu | ❌ Không thay đổi |
+| Bản ghi | ❌ Không thay đổi |
+| Tùy chọn (`wp_options`) | ❌ Không thêm/sửa/xóa |
+| Metadata (`wp_postmeta`, `wp_usermeta`, ...) | ❌ Không ảnh hưởng |
+
+> 🔐 Phiên bản hiện tại của **Gấu Bricks** chỉ bổ sung/tùy chỉnh ở cấp độ giao diện trình dựng trang (Page Builder UI).  
+> Không thực hiện bất kỳ thay đổi nào tới cấu trúc bảng hoặc dữ liệu trong cở sở dữ liệu của WordPress.  
+
+🇬🇧  
+| Component | Status |
+|-----------|--------|
+| Database Tables | ❌ No modifications |
+| Database Records | ❌ No modifications |
+| Options (`wp_options`) | ❌ No add/edit/delete |
+| Metadata (`wp_postmeta`, `wp_usermeta`, ...) | ❌ No impact |
+
+> 🔐 The current version of **Gấu Bricks** only adds/customizes at the Page Builder UI level.  
+> It does not make any changes to the structure of the tables or the data in the WordPress database.  
+
+---  
 
 ## ⚙️ Các tính năng / Features
 
 :vietnam:  
-- Cửa sổ bật lên (Popup) cho bảng chọn màu (Color Palette)
-- Tối ưu đổi tên phần tử (Element) trong bảng điều khiển Cấu trúc (Structure Panel)
-- Tùy chọn chỉnh thêm thanh trượt (Scrollbar) cho bảng điều khiển (Panel) trong Builder
-- Cửa sổ bật lên (Popup) cho Element Rich Text (Text Edit – TinyMCE)
-- Tùy chọn chỉnh giao diện Việt Nam (Vietnam Theme cho Builder)
+- Cửa sổ bật lên (Popup) cho bảng chọn màu (Color Palette).
+- Tối ưu đổi tên phần tử (Element) trong bảng điều khiển Cấu trúc (Structure Panel).
+- Tùy chọn chỉnh thêm thanh trượt (Scrollbar) cho bảng điều khiển (Panel) trong Builder.
+- Cửa sổ bật lên (Popup) cho Element Rich Text (Text Edit – TinyMCE).
+- Tùy chọn chỉnh giao diện Việt Nam (Vietnam Theme cho Builder).
 
 :uk:  
-- Popup for the Color Palette selector
-- Optimized element renaming in the Structure Panel
-- Optional scrollbar customization for Builder panels
-- Popup for the Element Rich Text (Text Edit – TinyMCE)
-- Optional Vietnamese UI theme for the Builder  
+- Popup for the Color Palette selector.
+- Optimized element renaming in the Structure Panel.
+- Optional scrollbar customization for Builder panels.
+- Popup for the Element Rich Text (Text Edit – TinyMCE).
+- Optional Vietnamese UI theme for the Builder.  
 
 ---
 
