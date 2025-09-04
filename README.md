@@ -12,7 +12,7 @@ Its main goal is to refine the page builder features and add small, useful enhan
 
 ---  
 
-## 📋 Bảng hỗ trợ / Compatibility Table
+## 📋 Bảng hỗ trợ & tương thích / Compatibility Table
 
 🇻🇳  
 | Thành phần      | Phiên bản yêu cầu | Đã kiểm tra với       |
