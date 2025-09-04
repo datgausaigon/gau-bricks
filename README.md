@@ -42,7 +42,8 @@ Its main goal is to refine the page builder features and add small, useful enhan
 | Tùy chọn (`wp_options`) | ❌ Không thêm/sửa/xóa |
 | Metadata (`wp_postmeta`, `wp_usermeta`, ...) | ❌ Không ảnh hưởng |
 
-> 🔐 Phiên bản hiện tại của **Gấu Bricks** chỉ bổ sung/tùy chỉnh ở cấp độ giao diện trình dựng trang (Page Builder UI).  
+> 🔐  
+> Phiên bản hiện tại của **Gấu Bricks** chỉ bổ sung/tùy chỉnh ở cấp độ giao diện trình dựng trang (Page Builder UI).  
 > Không thực hiện bất kỳ thay đổi nào tới cấu trúc bảng hoặc dữ liệu trong cở sở dữ liệu của WordPress.  
 
 🇬🇧  
@@ -53,7 +54,8 @@ Its main goal is to refine the page builder features and add small, useful enhan
 | Options (`wp_options`) | ❌ No add/edit/delete |
 | Metadata (`wp_postmeta`, `wp_usermeta`, ...) | ❌ No impact |
 
-> 🔐 The current version of **Gấu Bricks** only adds/customizes at the Page Builder UI level.  
+> 🔐  
+> The current version of **Gấu Bricks** only adds/customizes at the Page Builder UI level.  
 > It does not make any changes to the structure of the tables or the data in the WordPress database.  
 
 ---  
