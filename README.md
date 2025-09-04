@@ -32,7 +32,7 @@ Its main goal is to refine the page builder features and add small, useful enhan
 
 ---  
   
-## 🗄️ Cơ sở dữ liệu & Tính toàn vẹn dữ liệu / Database & Data Integrity  
+## 🛢️ Cơ sở dữ liệu & Tính toàn vẹn dữ liệu / Database & Data Integrity  
 
 🇻🇳  
 | Thành phần | Trạng thái |
