@@ -15,12 +15,12 @@ Its main goal is to refine the page builder features and add small, useful enhan
 ## 📋 Bảng hỗ trợ & tương thích / Compatibility Table
 
 🇻🇳  
-| Thành phần      | Phiên bản yêu cầu | Đã kiểm tra với          |
-|-----------------|------------------|---------------------------|
-| PHP             | ≥ 8.2            | 8.2.x                     |
-| WordPress       | ≥ 6.8.2          | 6.8.2                     |
-| Bricks Builder  | 2.0.2            | Gấu Bricks v1.0.1         |
-| Trình duyệt     | Chrome, Firfox   | Không tương thích Safari  |
+| Thành phần      | Yêu cầu tối thiểu | Đã kiểm tra với           |
+|-----------------|-------------------|---------------------------|
+| PHP             | ≥ 8.2             | 8.2.x                     |
+| WordPress       | ≥ 6.8.2           | 6.8.2                     |
+| Bricks Builder  | 2.0.2             | Gấu Bricks v1.0.1         |
+| Trình duyệt     | Chrome, Firfox    | Không tương thích Safari  |
 
 🇬🇧  
 | Component       | Minimum Required | Tested With                |
