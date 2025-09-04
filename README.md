@@ -1,4 +1,6 @@
-# 🐻 Gấu Bricks — Child Theme for Bricks Builder
+# 🐻 Gấu Bricks — Child Theme for Bricks Builder  
+
+<img width="1200" height="900" alt="screenshot" src="https://github.com/user-attachments/assets/764bcd6b-d807-43c5-8c7c-490ef4687821" />  
 
 :vietnam:  
 Gấu Bricks là child theme được phát triển để tối ưu trải nghiệm khi sử dụng [Bricks Builder](https://bricksbuilder.io/).  
