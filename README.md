@@ -69,7 +69,11 @@ Its main goal is to refine the page builder features and add small, useful enhan
   - Cho phép **quét khối** (bôi đen toàn bộ hoặc một phần văn bản khi sửa tên).
   - Cho phép **dán nội dung** bằng Ctrl/Cmd+V và mở Trình đơn ngữ cảnh (Context Menu) chuột phải trong lúc sửa tên.
   - Tự động **gỡ các class kéo/thả** khi đang rename để tránh xung đột.
-  - **Khôi phục class kéo/thả** sau khi kết thúc rename để drag/drop hoạt động bình thường.  
+  - **Khôi phục class kéo/thả** sau khi kết thúc rename để drag/drop hoạt động bình thường.
+- Tùy chọn chỉnh thêm thanh trượt (Scrollbar) cho bảng điều khiển (Panel) trong Builder.
+- Cửa sổ bật lên (Popup) cho Element Rich Text (Text Edit – TinyMCE).
+- Tùy chọn chỉnh giao diện Việt Nam (Vietnam Theme cho Builder).  
+
 🇬🇧  
 - Popup for the Color Palette selector
 - Optimized element renaming in the Structure Panel:  
@@ -78,7 +82,10 @@ Its main goal is to refine the page builder features and add small, useful enhan
   - Allow **text selection** (highlight part or full text when renaming).
   - Allow **paste** via Ctrl/Cmd+V and Context Menu during renaming.
   - Automatically **remove drag-related classes** while renaming to prevent conflicts.
-  - **Restore drag-related classes** after renaming so drag/drop works normally.  
+  - **Restore drag-related classes** after renaming so drag/drop works normally.
+- Optional scrollbar customization for Builder panels.
+- Popup for the Element Rich Text (Text Edit – TinyMCE).
+- Optional Vietnamese UI theme for the Builder.  
 ---
 
 ## 🛠️ Hướng dẫn sử dụng Filter / How to use Filters
