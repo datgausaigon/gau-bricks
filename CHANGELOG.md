@@ -5,14 +5,30 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.0.2] - 2025-09-16
+
+### 🇻🇳 Cải tiến  
+- **Structure Panel – Đổi tên phần tử**:
+    - Gỡ/khôi phục chính xác các class kéo/thả (`draggable`, `element`, …) khi vào và thoát trạng thái sửa tên.
+    - Cho phép **quét khối** (bôi đen toàn bộ hoặc một phần văn bản khi sửa tên).
+    - Cho phép dán nội dung bằng Ctrl/Cmd+V và mở Trình đơn ngữ cảnh (Context Menu) chuột phải trong lúc sửa tên.
+
+### 🇬🇧 Improvements  
+- **Structure Panel – Element renaming**:
+    - Properly remove/restore drag-related classes (`draggable`, `element`, …) when entering or exiting rename mode.
+    - Allow **text selection** (highlight part or full text when renaming).
+    - Allow paste via Ctrl/Cmd+V and Context Menu during renaming.
+
+---
+
 ## [1.0.1] - 2025-09-03
 
 ### 🇻🇳 Sửa lỗi
-- **Structure Panel – đổi tên phần tử**: Một số website vẫn kéo/thả được khi đang đổi tên do selector quá hẹp (`.label`).  
+- **Structure Panel – Đổi tên phần tử**: Một số website vẫn kéo/thả được khi đang đổi tên do selector quá hẹp (`.label`).  
   → Đã thay bằng selector tổng quát hơn: `#bricks-structure .structure-item .title input:not(.readonly)` để bao phủ cả `.label`, `.name`, v.v.
 
 ### 🇬🇧 Fixes
-- **Structure Panel – element renaming**: On some sites drag/drop was still possible while renaming because the selector was too narrow (`.label`).  
+- **Structure Panel – Element renaming**: On some sites drag/drop was still possible while renaming because the selector was too narrow (`.label`).  
   → Replaced with a broader selector: `#bricks-structure .structure-item .title input:not(.readonly)` to cover `.label`, `.name`, etc.
 
 ---

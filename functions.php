@@ -1,7 +1,7 @@
 <?php
 /**
  * Theme Name:  Gấu Bricks
- * Version:     1.0.1 (20250903)
+ * Version:     1.0.2 (20250916)
  * Author:      🐻
  * Author URI:  https://github.com/datgausaigon/
  * Text Domain: gau-bricks
@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 
 final class Theme {
 
-	public const VERSION = '1.0.1';
+	public const VERSION = '1.0.2';
 
 	public const ENABLE_VN_THEME_FILTER = 'gau/bricks/enable_builder_vietnam_theme';
 	public const ENABLE_BUILDER_PANEL_SCROLLBAR_FILTER = 'gau/bricks/enable_builder_panel_scrollbar';
