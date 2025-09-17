@@ -80,7 +80,7 @@ Its main goal is to refine the page builder features and add small, useful enhan
   - **Visual styling** while renaming: highlight the element being renamed for better visibility.
   - **Lock drag/drop** of elements while renaming.
   - Allow **text selection** (highlight part or full text when renaming).
-  - Allow **paste** via Ctrl/Cmd+V and Context Menu during renaming.
+  - Allow **paste text** via Ctrl/Cmd+V and Context Menu during renaming.
   - Automatically **remove drag-related classes** while renaming to prevent conflicts.
   - **Restore drag-related classes** after renaming so drag/drop works normally.
 - Optional scrollbar customization for Builder panels.
