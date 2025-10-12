@@ -1,7 +1,7 @@
 <?php
 /**
  * Theme Name:  Gấu Bricks
- * Version:     1.0.2 (20250916)
+ * Version:     1.0.3 (20251012)
  * Author:      🐻
  * Author URI:  https://github.com/datgausaigon/
  * Text Domain: gau-bricks
@@ -14,11 +14,13 @@ defined( 'ABSPATH' ) || exit;
 
 final class Theme {
 
-	public const VERSION = '1.0.2';
+	public const VERSION = '1.0.3';
 
-	public const ENABLE_VN_THEME_FILTER = 'gau/bricks/enable_builder_vietnam_theme';
-	public const ENABLE_BUILDER_PANEL_SCROLLBAR_FILTER = 'gau/bricks/enable_builder_panel_scrollbar';
-	public const ENABLE_CUSTOM_ELEMENT_TEXT_FILTER = 'gau/bricks/enable_custom_element_text';
+	public const ENABLE_VN_THEME_FILTER = 'gau/bricks/builder/enable_vietnam_theme';
+	public const ENABLE_PANEL_SCROLLBAR_FILTER = 'gau/bricks/builder/enable_panel_scrollbar';
+	public const ENABLE_CUSTOM_ELEMENT_TEXT_FILTER = 'gau/bricks/builder/enable_custom_element_text';
+	public const ENABLE_COLOR_PALETTE_POPUP_FILTER = 'gau/bricks/builder/enable_color_palette_popup';
+	public const ENABLE_CUSTOM_STRUCTURE_ITEM_RENAMING_FILTER = 'gau/bricks/builder/enable_custom_structure_item_renaming';
 
 	private static ?self $instance = null;
 
@@ -87,35 +89,75 @@ final class Theme {
 
 		if ( $this->is_vietnam_theme_enabled() ) {
 			wp_register_style(
-				'gau-bricks__builder-vietnam-theme-style',
-				self::assets_uri() . 'builder-vietnam-theme.css',
+				'gau-bricks__builder__vietnam-theme-style',
+				self::assets_uri() . 'vietnam-theme.css',
 				[],
 				self::VERSION,
 				'all'
 			);
-			wp_enqueue_style( 'gau-bricks__builder-vietnam-theme-style' );
+			wp_enqueue_style( 'gau-bricks__builder__vietnam-theme-style' );
 		}
 
-		if ( $this->is_builder_panel_scrollbar_enabled() ) {
+		if ( $this->is_panel_scrollbar_enabled() ) {
 			wp_register_style(
-				'gau-bricks__builder-panel-scrollbar-style',
-				self::assets_uri() . 'builder-panel-scrollbar.css',
+				'gau-bricks__builder__panel-scrollbar-style',
+				self::assets_uri() . 'panel-scrollbar.css',
 				[],
 				self::VERSION,
 				'all'
 			);
-			wp_enqueue_style( 'gau-bricks__builder-panel-scrollbar-style' );
+			wp_enqueue_style( 'gau-bricks__builder__panel-scrollbar-style' );
 		}
 
 		if ( $this->is_custom_element_text_enabled() ) {
 			wp_register_style(
-				'gau-bricks__builder-element-text-style',
-				self::assets_uri() . 'builder-element-text.css',
+				'gau-bricks__builder__custom-element-text-style',
+				self::assets_uri() . 'custom-element-text.css',
 				[],
 				self::VERSION,
 				'all'
 			);
-			wp_enqueue_style( 'gau-bricks__builder-element-text-style' );
+			wp_enqueue_style( 'gau-bricks__builder__custom-element-text-style' );
+		}
+
+		if ( $this->is_color_palette_popup_enabled() ) {
+			wp_register_style(
+				'gau-bricks__builder__color-palette-popup-style',
+				self::assets_uri() . 'color-palette-popup.css',
+				[],
+				self::VERSION,
+				'all'
+			);
+			wp_enqueue_style( 'gau-bricks__builder__color-palette-popup-style' );
+
+			wp_register_script(
+				'gau-bricks__builder__color-palette-popup-script',
+				self::assets_uri() . 'builder__color-palette-popup.js',
+				[],
+				self::VERSION,
+				true
+			);
+			wp_enqueue_script( 'gau-bricks__builder__color-palette-popup-script' );
+		}
+
+		if ( $this->is_custom_structure_item_renaming_enabled() ) {
+			wp_register_style(
+				'gau-bricks__builder__custom-structure-item-renaming-style',
+				self::assets_uri() . 'custom-structure-item-renaming.css',
+				[],
+				self::VERSION,
+				'all'
+			);
+			wp_enqueue_style( 'gau-bricks__builder__custom-structure-item-renaming-style' );
+
+			wp_register_script(
+				'gau-bricks__builder__custom-structure-item-renaming-script',
+				self::assets_uri() . 'custom-structure-item-renaming.js',
+				[],
+				self::VERSION,
+				true
+			);
+			wp_enqueue_script( 'gau-bricks__builder__custom-structure-item-renaming-script' );
 		}
 	}
 
@@ -157,12 +199,20 @@ final class Theme {
 		return (bool) apply_filters( self::ENABLE_VN_THEME_FILTER, false );
 	}
 
-	private function is_builder_panel_scrollbar_enabled(): bool {
-		return (bool) apply_filters( self::ENABLE_BUILDER_PANEL_SCROLLBAR_FILTER, false );
+	private function is_panel_scrollbar_enabled(): bool {
+		return (bool) apply_filters( self::ENABLE_PANEL_SCROLLBAR_FILTER, false );
 	}
 
 	private function is_custom_element_text_enabled(): bool {
 		return (bool) apply_filters( self::ENABLE_CUSTOM_ELEMENT_TEXT_FILTER, true );
+	}
+
+	private function is_color_palette_popup_enabled(): bool {
+		return (bool) apply_filters( self::ENABLE_COLOR_PALETTE_POPUP_FILTER, true );
+	}
+
+	private function is_custom_structure_item_renaming_enabled(): bool {
+		return (bool) apply_filters( self::ENABLE_CUSTOM_STRUCTURE_ITEM_RENAMING_FILTER, true );
 	}
 }
 

@@ -1,0 +1,23 @@
+/* Builder Structure
+   Element Item rename style.
+ */
+#bricks-structure .structure-item input:not(.readonly) {
+    height: 100%;
+    font-weight: 600;
+    cursor: text;
+    padding: 0 4px;
+    border: 1px dashed var(--builder-color-accent);
+    height: calc(var(--builder-structure-input-height) - 8px);
+}
+
+#bricks-structure li.active > .structure-item > .title:has(> input:not(.readonly)) > .icon:hover {
+    color: var(--builder-color-accent);
+}
+
+#bricks-structure li.active > .structure-item:has(> .title > input:not(.readonly)) {
+    background-color: var(--builder-bg-green);
+    color: var(--builder-color-green);
+    caret-color: currentColor;
+    box-shadow: inset 0 0 0 1px var(--builder-color-green);
+    cursor: pointer;
+}

@@ -53,7 +53,7 @@ final class Custom_Element_Text {
 			return $mce_init;
 		}
 
-		$rel  = '/assets/builder-tinymce.css';
+		$rel  = '/assets/tinymce.css';
 		$path = get_stylesheet_directory() . $rel;
 		$url  = get_stylesheet_directory_uri() . $rel;
 
