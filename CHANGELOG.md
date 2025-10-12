@@ -4,7 +4,77 @@ Tất cả thay đổi quan trọng của dự án này sẽ được ghi lại 
 All notable changes to this project will be documented in this file.
 
 ---
+## [1.0.3] - 2025-10-12
+### 🇻🇳 Cải tiến
 
+#### Tối ưu đổi tên phần tử (Element) trong bảng điều khiển Cấu trúc (Structure Panel):
+- Tách tính năng thành module riêng:
+  - Thêm file JS & CSS riêng:  
+    - `custom-structure-item-renaming.js`  
+    - `custom-structure-item-renaming.css`
+  - Thêm **flag riêng** để bật/tắt module:  
+    `gau/bricks/builder/enable_custom_structure_item_renaming`
+- Cập nhật tương thích với **Bricks Builder 2.1.x**:
+  - Khi `input:not(.readonly)` → đang rename → **remove** các class  
+    `bricks-draggable-item`, `bricks-draggable-handle`, `draggable`, `element`
+  - Khi `input.readonly` → kết thúc rename → **add lại** các class trên.
+  - Giữ nguyên khả năng drag/drop khi chưa rename.
+- Cải thiện độ chính xác và hiệu năng:
+  - Không dùng `setTimeout`.
+  - Theo dõi chính xác root `ul.bricks-structure-list.bricks-draggable-root`.
+  - Dùng `MutationObserver` + `focusin` / `focusout` để đồng bộ tức thì.
+- Cải tiến định dạng trực quan (CSS) khi đang sửa tên.
+
+#### Cửa sổ bật lên (Popup) cho bảng chọn màu (Color Palette):
+- Tách tính năng thành module riêng:
+  - Thêm file JS & CSS riêng:  
+    - `color-palette-popup.js`  
+    - `color-palette-popup.css`
+  - Thêm **flag riêng** để bật/tắt module:  
+    `gau/bricks/builder/enable_color_palette_popup`
+- Giữ nguyên chức năng: tự động chuyển Color Palette trong Builder Panel từ **Grid → Popup List** khi người dùng mở Color Picker.
+
+#### Khác:
+- Cấu trúc theme được module hóa (mỗi tính năng là một module riêng biệt).
+- Bổ sung ghi chú mã nguồn song ngữ (VN/EN), rõ ràng và đúng cú pháp.
+
+---
+
+### 🇬🇧 Improvements
+
+#### Optimized element renaming in the Structure Panel:
+- Refactored to a standalone module:
+  - Split into dedicated files:  
+    - `custom-structure-item-renaming.js`  
+    - `custom-structure-item-renaming.css`
+  - Added a new **feature flag**:  
+    `gau/bricks/builder/enable_custom_structure_item_renaming`
+- Updated for **Bricks Builder 2.1.x**:
+  - When `input:not(.readonly)` → renaming → **remove** classes  
+    `bricks-draggable-item`, `bricks-draggable-handle`, `draggable`, `element`
+  - When `input.readonly)` → rename ended → **restore** those classes.
+  - Keep drag/drop working when not renaming.
+- Improved accuracy and performance:
+  - No `setTimeout` used.
+  - Detects the exact root `ul.bricks-structure-list.bricks-draggable-root`.
+  - Uses `MutationObserver` and `focusin` / `focusout` for instant syncing.
+- Improved visual styling while renaming (CSS).
+
+#### Popup for the Color Palette selector:
+- Refactored to a standalone module:
+  - Split into dedicated files:    
+    - `color-palette-popup.js`  
+    - `color-palette-popup.css`
+  - Added a new **feature flag**:  
+    `gau/bricks/builder/enable_color_palette_popup`
+- Keeps original behavior: automatically switches the Color Palette in Builder Panel from **Grid → Popup List** when the Color Picker opens.
+
+#### Misc:
+- Modularized theme structure: each feature is now independent.
+- Added clear bilingual inline documentation (VN/EN) with consistent syntax and tone.
+
+
+---
 ## [1.0.2] - 2025-09-16
 
 ### 🇻🇳 Cải tiến  
