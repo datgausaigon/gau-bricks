@@ -75,7 +75,7 @@ Its main goal is to refine the page builder features and add small, useful enhan
 - Tùy chọn chỉnh giao diện Việt Nam (Vietnam Theme cho Builder).  
 
 🇬🇧  
-- Popup for the Color Palette selector
+- Popup for the Color Palette selector.
 - Optimized element renaming in the Structure Panel:  
   - **Visual styling** while renaming: highlight the element being renamed for better visibility.
   - **Lock drag/drop** of elements while renaming.
@@ -96,13 +96,19 @@ Thêm các filter này trong plugin riêng hoặc trong file `functions.php` c�
 
 ```php
 // Bật giao diện Việt Nam cho Builder
-add_filter( 'gau/bricks/enable_builder_vietnam_theme', '__return_true' );
+add_filter( 'gau/bricks/builder/enable_vietnam_theme', '__return_true' );
 
 // Bật scrollbar tùy chỉnh cho panel
-add_filter( 'gau/bricks/enable_builder_panel_scrollbar', '__return_true' );
+add_filter( 'gau/bricks/builder/enable_panel_scrollbar', '__return_true' );
 
 // Bật tối ưu Element Text
-add_filter( 'gau/bricks/enable_custom_element_text', '__return_true' );
+add_filter( 'gau/bricks/builder/enable_custom_element_text', '__return_true' );
+
+// Bật Cửa sổ bật lên (Popup) cho bảng chọn màu (Color Palette)
+add_filter( 'gau/bricks/builder/enable_color_palette_popup', '__return_true' );
+
+// Bật Tối ưu đổi tên phần tử (Element) trong bảng điều khiển Cấu trúc (Structure Panel)
+add_filter( 'gau/bricks/builder/enable_custom_structure_item_renaming', '__return_true' );
 ```
 
 Mặc định các filter trả về `false` (tắt). Dùng `__return_true` để bật.
@@ -113,13 +119,19 @@ Add these filters in your own plugin or in another child theme’s `functions.ph
 
 ```php
 // Enable Vietnamese theme for Builder
-add_filter( 'gau/bricks/enable_builder_vietnam_theme', '__return_true' );
+add_filter( 'gau/bricks/builder/enable_vietnam_theme', '__return_true' );
 
 // Enable custom scrollbar for Builder panels
-add_filter( 'gau/bricks/enable_builder_panel_scrollbar', '__return_true' );
+add_filter( 'gau/bricks/builder/enable_panel_scrollbar', '__return_true' );
 
 // Enable Element Text optimization
-add_filter( 'gau/bricks/enable_custom_element_text', '__return_true' );
+add_filter( 'gau/bricks/builder/enable_custom_element_text', '__return_true' );
+
+// Popup for the Color Palette selector
+add_filter( 'gau/bricks/builder/enable_color_palette_popup', '__return_true' );
+
+// Optimized element renaming in the Structure Panel
+add_filter( 'gau/bricks/builder/enable_custom_structure_item_renaming', '__return_true' );
 ```
 
 By default, these filters return `false` (disabled). Use `__return_true` to activate.
