@@ -19,7 +19,7 @@ Its main goal is to refine the page builder features and add small, useful enhan
 |-----------------|-------------------|---------------------------|
 | PHP             | ≥ 8.2             | 8.2.x                     |
 | WordPress       | ≥ 6.9.1           | 6.9.1                     |
-| Bricks Builder  | 2.2.0             | Gấu Bricks v1.0.9         |
+| Bricks Builder  | 2.2.0             | Gấu Bricks v1.1.0         |
 | Trình duyệt     | Chrome, Firfox    | Không tương thích Safari  |
 
 🇬🇧  
@@ -27,7 +27,7 @@ Its main goal is to refine the page builder features and add small, useful enhan
 |-----------------|------------------|----------------------------|
 | PHP             | ≥ 8.2            | 8.2.x                      |
 | WordPress       | ≥ 6.9.1          | 6.9.1                      |
-| Bricks Builder  | 2.2.0            | Gấu Bricks v1.0.9          |
+| Bricks Builder  | 2.2.0            | Gấu Bricks v1.1.0          |
 | Browser         | Chrome, Firfox   | Not compatible with Safari |
 
 ---  
