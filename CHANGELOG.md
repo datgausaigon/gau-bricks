@@ -13,7 +13,10 @@ All notable changes to this project will be documented in this file.
   
   - Giúp tối ưu diện tích hiển thị bằng cách thu hẹp khoảng cách giữa các icon/phần tử trong bảng Elements, cho phép xem được nhiều phần tử hơn mà không cần cuộn trang nhiều.
     
-  - Có thể bật/tắt linh hoạt thông qua hook/filter: gau/bricks/builder/enable_compact_elements_panel.
+  - Có thể bật/tắt linh hoạt thông qua hook/filter:  
+    ```php
+    add_filter( gau/bricks/builder/enable_compact_elements_panel, '__return_true' );
+    ```
     
 - **Tương thích Bricks 2.2:**
   
@@ -33,7 +36,10 @@ All notable changes to this project will be documented in this file.
 
   - Optimizes screen real estate by reducing spacing between element icons/items in the Elements panel, allowing more items to be visible without excessive scrolling.
 
-  - Can be toggled on/off via hook/filter: gau/bricks/builder/enable_compact_elements_panel.
+  - Can be toggled on/off via hook/filter: 
+    ```php
+    add_filter( gau/bricks/builder/enable_compact_elements_panel, '__return_true' );
+    ```
     
 - **Bricks 2.2 Compatibility:**
   
