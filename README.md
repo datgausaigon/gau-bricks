@@ -73,6 +73,7 @@ Its main goal is to refine the page builder features and add small, useful enhan
   - Tự động **gỡ các class kéo/thả** khi đang rename để tránh xung đột.
   - **Khôi phục class kéo/thả** sau khi kết thúc rename để drag/drop hoạt động bình thường.
 - Tùy chọn chỉnh thêm thanh trượt (Scrollbar) cho bảng điều khiển (Panel) trong Builder.
+- Tùy chọn hiển thị phần tử (Element) cho bảng điều khiển (Panel) dạng thu gọn trong Builder.
 - Cửa sổ bật lên (Popup) cho Element Rich Text (Text Edit – TinyMCE).
 - Tùy chọn chỉnh giao diện Việt Nam (Vietnam Theme cho Builder).  
 
@@ -87,6 +88,7 @@ Its main goal is to refine the page builder features and add small, useful enhan
   - Automatically **remove drag-related classes** while renaming to prevent conflicts.
   - **Restore drag-related classes** after renaming so drag/drop works normally.
 - Optional scrollbar customization for Builder panels.
+- Optional Compact Elements Panel.
 - Popup for the Element Rich Text (Text Edit – TinyMCE).
 - Optional Vietnamese UI theme for the Builder.  
 
@@ -105,6 +107,9 @@ add_filter( 'gau/bricks/enable_builder_vietnam_theme', '__return_true' );
 // Bật scrollbar tùy chỉnh cho panel
 add_filter( 'gau/bricks/enable_builder_panel_scrollbar', '__return_true' );
 
+// Bật thu gọn bảng phần tử (Compact Elements Panel)
+add_filter( 'gau/bricks/builder/enable_compact_elements_panel', '__return_true' );
+
 // Bật tối ưu Element Text
 add_filter( 'gau/bricks/enable_custom_element_text', '__return_true' );
 ```
@@ -121,6 +126,9 @@ add_filter( 'gau/bricks/enable_builder_vietnam_theme', '__return_true' );
 
 // Enable custom scrollbar for Builder panels
 add_filter( 'gau/bricks/enable_builder_panel_scrollbar', '__return_true' );
+
+// Enable Compact Elements Panel
+add_filter( 'gau/bricks/builder/enable_compact_elements_panel', '__return_true' );
 
 // Enable Element Text optimization
 add_filter( 'gau/bricks/enable_custom_element_text', '__return_true' );
