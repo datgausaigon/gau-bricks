@@ -2,28 +2,20 @@
    Color Palette
 */
 
-/* Toggle Button Style */
-/* Toggle Button Style */
-/* Default State inherits from .bricks-svg-wrapper .dynamic-tag-picker-button */
-
-/* Active State - Absolute Top Right of Modal */
-/* Active State - Absolute Top Right of Modal */
-/* Removed custom styles as requested */
-
 /* --- ACTIVE STATE OVERRIDES --- */
 
-#bricks-panel:has(div.control.control-color.gau-color-palette-popup-active .bricks-control-popup.bottom) #bricks-panel-header,
-#bricks-panel:has(div.control.control-color.gau-color-palette-popup-active .bricks-control-popup.bottom) #bricks-panel-sticky,
-#bricks-panel:has(div.control.control-color.gau-color-palette-popup-active .bricks-control-popup.bottom) #bricks-panel-controls-search,
-#bricks-panel:has(div.control.control-color.gau-color-palette-popup-active .bricks-control-popup.bottom) #bricks-panel-resizable {
+#bricks-panel:has(div.control.control-color.gau-color-palette-popup-expand) #bricks-panel-header,
+#bricks-panel:has(div.control.control-color.gau-color-palette-popup-expand) #bricks-panel-sticky,
+#bricks-panel:has(div.control.control-color.gau-color-palette-popup-expand) #bricks-panel-controls-search,
+#bricks-panel:has(div.control.control-color.gau-color-palette-popup-expand) #bricks-panel-resizable {
     z-index: 1000;
 }
 
-#bricks-panel-inner:has(div.control.control-color.gau-color-palette-popup-active .bricks-control-popup.bottom) .bricks-sortable-item.repeater-item.open {
+#bricks-panel-inner:has(div.control.control-color.gau-color-palette-popup-expand) .bricks-sortable-item.repeater-item.open {
     z-index: auto;
 }
 
-div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) {
+div.control.control-color.gau-color-palette-popup-expand {
     position: fixed !important;
     top: 120px;
     left: 50%;
@@ -33,11 +25,11 @@ div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-pop
     max-width: 1000px;
 }
 
-#bricks-panel:has(div.control.control-color.gau-color-palette-popup-active .bricks-control-popup.bottom) .control-responsive-indicator.expand {
+#bricks-panel:has(div.control.control-color.gau-color-palette-popup-expand) .control-responsive-indicator.expand {
     z-index: 100002;
 }
 
-div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) .control-inner {
+div.control.control-color.gau-color-palette-popup-expand .control-inner {
     padding: 10px 0 10px 30px;
     justify-content: start !important;
     gap: 0;
@@ -46,40 +38,51 @@ div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-pop
     box-shadow: var(--builder-popup-box-shadow);
 }
 
-div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) .control-small > div,
-div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) .control-small > label {
+div.control.control-color.gau-color-palette-popup-expand .control-small > div,
+div.control.control-color.gau-color-palette-popup-expand .control-small > label {
     flex: 0;
 }
 
-div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) .control-inner .color-value-tooltip {
+div.control.control-color.gau-color-palette-popup-expand .control-inner .color-value-tooltip {
     border: solid 1px white;
 }
 
-div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) .control-inner .bricks-control-preview:hover .color-value-tooltip {
+div.control.control-color.gau-color-palette-popup-expand .control-inner .bricks-control-preview:hover .color-value-tooltip {
     border: dotted 2px var(--builder-color-accent);
 }
 
-div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) .control-inner label[for="color"] {
+div.control.control-color.gau-color-palette-popup-expand .control-inner label[for="color"] {
     flex: 0 !important;
     gap: .8rem;
 }
 
-div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) .control-inner [data-control=color] > .dynamic-tag-picker-button,
-div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) .control-inner [data-control=color] > .bricks-control-preview {
+div.control.control-color.gau-color-palette-popup-expand .control-inner [data-control=color] > .dynamic-tag-picker-button,
+div.control.control-color.gau-color-palette-popup-expand .control-inner [data-control=color] > .bricks-control-preview {
     top: 5px;
     margin-right: 5px;
 }
 
-div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) .control-inner [data-control=color] > .input-wrapper [data-control=text].color-input {
+div.control.control-color.gau-color-palette-popup-expand .bricks-control-popup .color-palettes {
+    gap: 10px;
+}
+
+/* Text Box Color Value */
+div.control.control-color.gau-color-palette-popup-expand .control-inner [data-control=color] > .input-wrapper [data-control=text].color-input {
+    position: absolute;
     width: 50%;
     min-width: 200px;
     margin-top: 0;
-    position: absolute;
     top: 4px;
-    right: 100px;
+    right: 150px;
+    z-index: 100002;
 }
 
-div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) .control-inner [data-control=color] > .input-wrapper {
+div.control.control-color.gau-color-palette-popup-expand .control-inner [data-control=color] > .input-wrapper [data-control=text].color-input input {
+    height: 30px;
+    border: 1px solid white;
+}
+
+div.control.control-color.gau-color-palette-popup-expand .control-inner [data-control=color] > .input-wrapper {
     position: absolute;
     left: 0;
     top: 0;
@@ -88,7 +91,7 @@ div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-pop
 
 /*--*/
 
-div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup.bottom {
+div.control.control-color.gau-color-palette-popup-expand [data-control=color] .bricks-control-popup.bottom {
     margin-top: 11px;
     display: grid;
     grid-template-columns: 65% 35%;
@@ -101,29 +104,29 @@ div.control.control-color.gau-color-palette-popup-active [data-control=color] .b
     box-shadow: var(--builder-popup-box-shadow);
 }
 
-div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup.bottom::before {
+div.control.control-color.gau-color-palette-popup-expand [data-control=color] .bricks-control-popup.bottom::before {
     display: none;
 }
 
-div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup .color-modes {
+div.control.control-color.gau-color-palette-popup-expand [data-control=color] .bricks-control-popup .color-modes {
     margin: 0;
 }
 
-div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup .color-inputs {
+div.control.control-color.gau-color-palette-popup-expand [data-control=color] .bricks-control-popup .color-inputs {
     margin: 0;
 }
 
-div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup .color-palette {
+div.control.control-color.gau-color-palette-popup-expand [data-control=color] .bricks-control-popup .color-palette {
     grid-row: span 4;
     padding: 20px 20px 20px 0;
     max-height: 55vh;
 }
 
-div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup .color-palette:before {
+div.control.control-color.gau-color-palette-popup-expand [data-control=color] .bricks-control-popup .color-palette:before {
     display: none;
 }
 
-div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup .color-palette.list {
+div.control.control-color.gau-color-palette-popup-expand [data-control=color] .bricks-control-popup .color-palette.list {
     flex-direction: column;
     flex-wrap: wrap;
     gap: 20px;
@@ -133,16 +136,16 @@ div.control.control-color.gau-color-palette-popup-active [data-control=color] .b
     overflow-x: auto;
 }
 
-div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup .color-palette.list li {
+div.control.control-color.gau-color-palette-popup-expand [data-control=color] .bricks-control-popup .color-palette.list li {
     width: calc(50% - 10px);
 }
 
-div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup .color-palette.list li .actions span {
+div.control.control-color.gau-color-palette-popup-expand [data-control=color] .bricks-control-popup .color-palette.list li .actions span {
     align-self: center;
     height: 16px;
 }
 
-div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup .color-palette.grid {
+div.control.control-color.gau-color-palette-popup-expand [data-control=color] .bricks-control-popup .color-palette.grid {
     padding: 32px;
     gap: 12px;
     grid-template-columns: repeat(auto-fit, minmax(32px, 1fr));
@@ -153,26 +156,30 @@ div.control.control-color.gau-color-palette-popup-active [data-control=color] .b
     overflow-x: hidden;
 }
 
-div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup .color-palette.grid li {
+div.control.control-color.gau-color-palette-popup-expand [data-control=color] .bricks-control-popup .color-palette.grid li {
     aspect-ratio: 1/1;
 }
 
 
-div.control.control-color.gau-color-palette-popup-active [data-control="color"] .bricks-control-popup > :not(.color-palette-list):not(.color-palette-grid) {
+div.control.control-color.gau-color-palette-popup-expand [data-control="color"] .bricks-control-popup > :not(.color-palette-list):not(.color-palette-grid) {
     grid-column: 2;
 }
 
-div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup > .color-palette-list,
-div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup > .color-palette-grid {
+div.control.control-color.gau-color-palette-popup-expand [data-control=color] .bricks-control-popup > .color-palette-list,
+div.control.control-color.gau-color-palette-popup-expand [data-control=color] .bricks-control-popup > .color-palette-grid {
     grid-column: 1;
     grid-row: 1 / 8;
 }
 
-div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup .color-modes::before {
+div.control.control-color.gau-color-palette-popup-expand [data-control=color] .bricks-control-popup .color-modes::before {
     left: 0;
     right: 0;
 }
 
-div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup [data-control=select] .dropdown {
+div.control.control-color.gau-color-palette-popup-expand [data-control=color] .bricks-control-popup [data-control=select] .dropdown {
     max-height: 240px;
+}
+
+div.control.control-color.gau-color-palette-popup-expand [data-control=color] .color-picker-popup {
+    z-index: 100003;
 }

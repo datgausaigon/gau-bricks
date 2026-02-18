@@ -1,0 +1,80 @@
+###############################################################################
+# 1. CẤU HÌNH TỔNG QUÁT (GLOBAL)
+###############################################################################
+# Tự động nhận diện file văn bản và ép xuống dòng về LF
+* text=auto eol=lf
+
+###############################################################################
+# 2. NGÔN NGỮ LẬP TRÌNH & WEB (ÉP LF)
+###############################################################################
+*.php           text eol=lf
+*.js            text eol=lf
+*.jsx           text eol=lf
+*.ts            text eol=lf
+*.tsx           text eol=lf
+*.css           text eol=lf
+*.scss          text eol=lf
+*.sass          text eol=lf
+*.less          text eol=lf
+*.html          text eol=lf
+*.xml           text eol=lf
+*.sql           text eol=lf
+
+###############################################################################
+# 3. CẤU HÌNH DỰ ÁN & WORDPRESS SPECIFIC
+###############################################################################
+.htaccess       text eol=lf
+wp-cli.yml      text eol=lf
+*.dist          text eol=lf
+.editorconfig   text eol=lf
+.gitignore      text eol=lf
+.gitattributes  text eol=lf
+composer.json   text eol=lf
+composer.lock   text eol=lf
+package.json    text eol=lf
+package-lock.json text eol=lf
+
+###############################################################################
+# 4. TÀI LIỆU & VĂN BẢN (ÉP LF)
+###############################################################################
+*.md            text eol=lf
+*.txt           text eol=lf
+CHANGELOG* text eol=lf
+LICENSE* text eol=lf
+README* text eol=lf
+
+###############################################################################
+# 5. DỊCH THUẬT (WORDPRESS I18N)
+###############################################################################
+*.po            text eol=lf
+*.mo            binary
+
+###############################################################################
+# 6. ĐỒ HỌA & MULTIMEDIA (BINARY)
+###############################################################################
+*.png           binary
+*.jpg           binary
+*.jpeg          binary
+*.gif           binary
+*.webp          binary
+*.avif          binary
+*.ico           binary
+*.pdf           binary
+*.psd           binary
+*.ai            binary
+*.svg           text eol=lf
+
+###############################################################################
+# 7. FONTS & ICON PACKS (BINARY)
+###############################################################################
+*.woff          binary
+*.woff2         binary
+*.ttf           binary
+*.eot           binary
+*.otf           binary
+
+###############################################################################
+# 8. BUILD TOOLS & SCRIPTS
+###############################################################################
+*.sh            text eol=lf
+*.bat           text eol=lf

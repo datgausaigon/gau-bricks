@@ -1,7 +1,7 @@
 <?php
 /**
  * Theme Name:  Gấu Bricks
- * Version:     1.0.9 (20260218)
+ * Version:     1.1.0 (20260218)
  * Author:      🐻
  * Author URI:  https://github.com/datgausaigon/
  * Text Domain: gau-bricks
@@ -15,11 +15,11 @@ defined('ABSPATH') || exit;
 final class Theme
 {
 
-	public const VERSION = '1.0.9';
+	public const VERSION = '1.1.0';
 
 	public const ENABLE_VN_THEME_FILTER = 'gau/bricks/builder/enable_vietnam_theme';
 	public const ENABLE_PANEL_SCROLLBAR_FILTER = 'gau/bricks/builder/enable_panel_scrollbar';
-	public const ENABLE_CUSTOM_ELEMENT_TEXT_FILTER = 'gau/bricks/builder/enable_custom_element_text';
+	public const ENABLE_ELEMENT_TEXT_POPUP_FILTER = 'gau/bricks/builder/enable_element_text_popup';
 	public const ENABLE_COLOR_PALETTE_POPUP_FILTER = 'gau/bricks/builder/enable_color_palette_popup';
 
 	public const ENABLE_COMPACT_ELEMENTS_PANEL_FILTER = 'gau/bricks/builder/enable_compact_elements_panel';
@@ -46,11 +46,11 @@ final class Theme
 
 	public function maybe_boot_modules(): void
 	{
-		if ($this->is_custom_element_text_enabled()) {
-			$path = self::includes_path() . 'custom-element-text.php';
+		if ($this->is_element_text_popup_enabled()) {
+			$path = self::includes_path() . 'element-text-popup.php';
 			if (file_exists($path)) {
 				require_once $path;
-				Includes\Custom_Element_Text::instance();
+				Includes\Element_Text_Popup::instance();
 			}
 		}
 	}
@@ -128,15 +128,15 @@ final class Theme
 			wp_enqueue_style('gau-bricks__builder__compact-elements-panel-style');
 		}
 
-		if ($this->is_custom_element_text_enabled()) {
+		if ($this->is_element_text_popup_enabled()) {
 			wp_register_style(
-				'gau-bricks__builder__custom-element-text-style',
-				self::assets_uri() . 'custom-element-text.css',
+				'gau-bricks__builder__element-text-popup-style',
+				self::assets_uri() . 'element-text-popup.css',
 				[],
 				self::VERSION,
 				'all'
 			);
-			wp_enqueue_style('gau-bricks__builder__custom-element-text-style');
+			wp_enqueue_style('gau-bricks__builder__element-text-popup-style');
 		}
 
 		if ($this->is_color_palette_popup_enabled()) {
@@ -255,9 +255,9 @@ final class Theme
 		return (bool) apply_filters(self::ENABLE_COMPACT_ELEMENTS_PANEL_FILTER, true);
 	}
 
-	private function is_custom_element_text_enabled(): bool
+	private function is_element_text_popup_enabled(): bool
 	{
-		return (bool) apply_filters(self::ENABLE_CUSTOM_ELEMENT_TEXT_FILTER, true);
+		return (bool) apply_filters(self::ENABLE_ELEMENT_TEXT_POPUP_FILTER, true);
 	}
 
 	private function is_color_palette_popup_enabled(): bool

@@ -1,6 +1,9 @@
 (() => {
   "use strict";
 
+    // State to persist expansion across re-renders
+    let isPaletteExpanded = false;
+
     // Bricks Native Icons (localized from functions.php)
     function getIcon(icon) {
         if (!icon) return '';
@@ -24,43 +27,93 @@
     const control = popup.closest(".control.control-color");
     if (!control) return;
 
-    // Check if toggle already exists to avoid duplicates
-    if (control.querySelector(".gau-color-palette-popup-toggle")) return;
+    // --- PERSISTENCE OBSERVER ---
+    // Watch for Bricks removing our class OR removing the popup, and put it back immediately
+    if (!control._gauClassObserver) {
+        control._gauClassObserver = new MutationObserver((mutations) => {
+            if (!isPaletteExpanded) return;
 
-    // Create the button
-    const btn = document.createElement("div");
-    btn.className =
-      "gau-color-palette-popup-toggle bricks-svg-wrapper dynamic-tag-picker-button";
+            // 1. Class Persistence
+            if (!control.classList.contains("gau-color-palette-popup-expand")) {
+                control.classList.add("gau-color-palette-popup-expand");
+            }
 
-    // Bricks Attributes
-    btn.setAttribute("data-name", "color-palette-popup-toggle");
-    btn.setAttribute("data-balloon", "Expand Palette");
-    btn.setAttribute("data-balloon-pos", "top-right");
+            // 2. Popup Resurrection (Nuclear Option)
+            for (const mutation of mutations) {
+                if (mutation.type === 'childList') {
+                    for (const removedNode of mutation.removedNodes) {
+                        if (removedNode.nodeType === 1 && removedNode.classList.contains('bricks-control-popup')) {
+                            // Bricks closed it. We re-open it.
+                            const trigger = control.querySelector('.bricks-control-preview') || control.querySelector('.dynamic-tag-picker-button');
+                            if (trigger) {
+                                // Use timeout to avoid conflict with current event loop
+                                setTimeout(() => trigger.click(), 0);
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        control._gauClassObserver.observe(control, {
+            attributes: true,
+            attributeFilter: ["class"],
+            childList: true, 
+            subtree: true // Needed to see popup removal if it's deeper? Usually it's direct child of control or input-wrapper.
+        });
+    }
 
-    // Initial State: Expand
-    btn.innerHTML = iconExpand;
+    // Avoid double injection of the button
+    const existingBtn = control.querySelector(".gau-color-palette-popup-toggle");
+    if (existingBtn) {
+        // Just re-apply state if needed
+        if (isPaletteExpanded && !control.classList.contains("gau-color-palette-popup-expand")) {
+             control.classList.add("gau-color-palette-popup-expand");
+             existingBtn.innerHTML = iconCollapse;
+             existingBtn.setAttribute("data-balloon", "Collapse Palette");
+        }
+        return;
+    }
 
-    // Toggle Logic
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation(); // Prevent closing the popup
-      const isActive = control.classList.toggle(
-        "gau-color-palette-popup-active",
-      );
-
-      // Update Icon and Title based on new state
-      if (isActive) {
-        btn.innerHTML = iconCollapse;
-        btn.setAttribute("data-balloon", "Collapse Palette");
-      } else {
-        btn.innerHTML = iconExpand;
-        btn.setAttribute("data-balloon", "Expand Palette");
-      }
-    });
-
-    // Insert button into .palette-actions
-    const actionsContainer = popup.querySelector(".palette-actions");
+    const actionsContainer = popup.querySelector('.palette-actions');
     if (actionsContainer) {
-      actionsContainer.appendChild(btn);
+        // Create the button
+        const btn = document.createElement("div");
+        btn.className = "gau-color-palette-popup-toggle bricks-svg-wrapper dynamic-tag-picker-button";
+        
+        // Bricks Attributes
+        btn.setAttribute("data-name", "color-palette-popup-toggle");
+        
+        // Initial State based on persistence
+        if (isPaletteExpanded) {
+            btn.innerHTML = iconCollapse;
+            btn.setAttribute("data-balloon", "Collapse Palette");
+            control.classList.add("gau-color-palette-popup-expand");
+        } else {
+            btn.innerHTML = iconExpand;
+            btn.setAttribute("data-balloon", "Expand Palette");
+            control.classList.remove("gau-color-palette-popup-expand");
+        }
+        
+        btn.setAttribute("data-balloon-pos", "top-right");
+
+        // Toggle Logic
+        btn.addEventListener("click", (e) => {
+            e.stopPropagation(); // Prevent closing the popup
+            isPaletteExpanded = !isPaletteExpanded; // Toggle state
+
+            if (isPaletteExpanded) {
+                control.classList.add("gau-color-palette-popup-expand");
+                btn.innerHTML = iconCollapse;
+                btn.setAttribute("data-balloon", "Collapse Palette");
+            } else {
+                control.classList.remove("gau-color-palette-popup-expand");
+                btn.innerHTML = iconExpand;
+                btn.setAttribute("data-balloon", "Expand Palette");
+            }
+        });
+
+        // Insert as the last child of .palette-actions
+        actionsContainer.appendChild(btn);
     } else {
       // Fallback just in case
       const targetContainer =
@@ -106,6 +159,25 @@
                 addedNode.classList.contains("bricks-control-popup")
               ) {
                 maybeSetColorsToList(addedNode);
+                
+                // Block event propagation to prevent Bricks from closing the popup
+                // We add listeners to the popup AND its direct children to catch events early
+                const events = ['click', 'mousedown', 'mouseup', 'pointerdown', 'pointerup', 'keydown', 'keyup', 'focusout', 'blur'];
+                const stopProp = (e) => {
+                    if (isPaletteExpanded) {
+                        e.stopPropagation();
+                    }
+                };
+
+                events.forEach(evt => {
+                    // Block at popup level
+                    addedNode.addEventListener(evt, stopProp);
+                    
+                    // Block at direct child level (to beat any listeners on the popup itself)
+                    Array.from(addedNode.children).forEach(child => {
+                        child.addEventListener(evt, stopProp);
+                    });
+                });
               }
             }
           }
