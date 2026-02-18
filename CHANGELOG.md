@@ -15,7 +15,7 @@ All notable changes to this project will be documented in this file.
     
   - Có thể bật/tắt linh hoạt thông qua hook/filter:  
     ```php
-    add_filter( gau/bricks/builder/enable_compact_elements_panel, '__return_true' );
+    add_filter( 'gau/bricks/builder/enable_compact_elements_panel', '__return_true' );
     ```
     
 - **Tương thích Bricks 2.2:**
@@ -38,7 +38,7 @@ All notable changes to this project will be documented in this file.
 
   - Can be toggled on/off via hook/filter: 
     ```php
-    add_filter( gau/bricks/builder/enable_compact_elements_panel, '__return_true' );
+    add_filter( 'gau/bricks/builder/enable_compact_elements_panel', '__return_true' );
     ```
     
 - **Bricks 2.2 Compatibility:**
