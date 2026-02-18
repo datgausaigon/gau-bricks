@@ -15,6 +15,7 @@
 }
 
 #bricks-structure li.active > .structure-item:has(> .title > input:not(.readonly)) {
+    height: 30px;
     background-color: var(--builder-bg-green);
     color: var(--builder-color-green);
     caret-color: currentColor;

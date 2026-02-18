@@ -1,19 +1,31 @@
 /* Builder Panel - Control Popup
    Color Palette
 */
-#bricks-panel-inner:has(div.control.control-color .bricks-control-popup.bottom) #bricks-panel-header,
-#bricks-panel-inner:has(div.control.control-color .bricks-control-popup.bottom) #bricks-panel-sticky,
-#bricks-panel-inner:has(div.control.control-color .bricks-control-popup.bottom) #bricks-panel-controls-search {
+
+/* Toggle Button Style */
+/* Toggle Button Style */
+/* Default State inherits from .bricks-svg-wrapper .dynamic-tag-picker-button */
+
+/* Active State - Absolute Top Right of Modal */
+/* Active State - Absolute Top Right of Modal */
+/* Removed custom styles as requested */
+
+/* --- ACTIVE STATE OVERRIDES --- */
+
+#bricks-panel:has(div.control.control-color.gau-color-palette-popup-active .bricks-control-popup.bottom) #bricks-panel-header,
+#bricks-panel:has(div.control.control-color.gau-color-palette-popup-active .bricks-control-popup.bottom) #bricks-panel-sticky,
+#bricks-panel:has(div.control.control-color.gau-color-palette-popup-active .bricks-control-popup.bottom) #bricks-panel-controls-search,
+#bricks-panel:has(div.control.control-color.gau-color-palette-popup-active .bricks-control-popup.bottom) #bricks-panel-resizable {
     z-index: 1000;
 }
 
-#bricks-panel-inner:has(div.control.control-color .bricks-control-popup.bottom) .bricks-sortable-item.repeater-item.open {
+#bricks-panel-inner:has(div.control.control-color.gau-color-palette-popup-active .bricks-control-popup.bottom) .bricks-sortable-item.repeater-item.open {
     z-index: auto;
 }
 
-div.control.control-color:has(.bricks-control-popup.bottom) {
+div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) {
     position: fixed !important;
-    top: 80px;
+    top: 120px;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 100001;
@@ -21,29 +33,63 @@ div.control.control-color:has(.bricks-control-popup.bottom) {
     max-width: 1000px;
 }
 
-div.control.control-color:has(.bricks-control-popup.bottom) .control-inner {
-    background-color: var(--builder-bg-3);
-    padding: 8px 0 8px 30px;
-    justify-content: start !important;
+#bricks-panel:has(div.control.control-color.gau-color-palette-popup-active .bricks-control-popup.bottom) .control-responsive-indicator.expand {
+    z-index: 100002;
 }
 
-div.control.control-color:has(.bricks-control-popup.bottom) .control-small > div,
-div.control.control-color:has(.bricks-control-popup.bottom) .control-small > label {
+div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) .control-inner {
+    padding: 10px 0 10px 30px;
+    justify-content: start !important;
+    gap: 0;
+    background-color: var(--builder-bg-3);
+    border-radius: var(--builder-border-radius);
+    box-shadow: var(--builder-popup-box-shadow);
+}
+
+div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) .control-small > div,
+div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) .control-small > label {
     flex: 0;
 }
 
-div.control.control-color:has(.bricks-control-popup.bottom) .control-inner .color-value-tooltip {
+div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) .control-inner .color-value-tooltip {
     border: solid 1px white;
 }
 
-div.control.control-color:has(.bricks-control-popup.bottom) .control-inner label[for="color"] {
+div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) .control-inner .bricks-control-preview:hover .color-value-tooltip {
+    border: dotted 2px var(--builder-color-accent);
+}
+
+div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) .control-inner label[for="color"] {
     flex: 0 !important;
+    gap: .8rem;
+}
+
+div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) .control-inner [data-control=color] > .dynamic-tag-picker-button,
+div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) .control-inner [data-control=color] > .bricks-control-preview {
+    top: 5px;
+    margin-right: 5px;
+}
+
+div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) .control-inner [data-control=color] > .input-wrapper [data-control=text].color-input {
+    width: 50%;
+    min-width: 200px;
+    margin-top: 0;
+    position: absolute;
+    top: 4px;
+    right: 100px;
+}
+
+div.control.control-color.gau-color-palette-popup-active:has(.bricks-control-popup.bottom) .control-inner [data-control=color] > .input-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 0;
 }
 
 /*--*/
 
-[data-control=color] .bricks-control-popup.bottom {
-    margin-top: 12px;
+div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup.bottom {
+    margin-top: 11px;
     display: grid;
     grid-template-columns: 65% 35%;
     gap: 20px;
@@ -51,83 +97,82 @@ div.control.control-color:has(.bricks-control-popup.bottom) .control-inner label
     padding-right: 40px;
     box-shadow: rgba(0, 0, 0, .4) 0 0 4px 2px;
     z-index: 100001;
+    background: linear-gradient(to right, var(--builder-bg) 63%, var(--builder-bg-2) 63%);
+    box-shadow: var(--builder-popup-box-shadow);
 }
 
-[data-control=color] .bricks-control-popup.bottom::before {
+div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup.bottom::before {
     display: none;
 }
 
-[data-control=color] .bricks-control-popup .color-modes {
+div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup .color-modes {
     margin: 0;
 }
 
-[data-control=color] .bricks-control-popup .color-inputs {
+div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup .color-inputs {
     margin: 0;
 }
 
-[data-control=color] .bricks-control-popup .color-palette {
+div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup .color-palette {
     grid-row: span 4;
     padding: 20px 20px 20px 0;
     max-height: 55vh;
 }
 
-[data-control=color] .bricks-control-popup .color-palette:before {
+div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup .color-palette:before {
     display: none;
 }
 
-[data-control=color] .bricks-control-popup .color-palette.list {
+div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup .color-palette.list {
     flex-direction: column;
     flex-wrap: wrap;
     gap: 20px;
+    scrollbar-color: var(--builder-color-accent) var(--builder-bg-3);
+    scrollbar-width: thick;
     overflow-y: hidden;
     overflow-x: auto;
 }
 
-[data-control=color] .bricks-control-popup .color-palette.list li {
+div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup .color-palette.list li {
     width: calc(50% - 10px);
 }
 
-[data-control=color] .bricks-control-popup .color-palette.list li .actions span {
+div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup .color-palette.list li .actions span {
     align-self: center;
     height: 16px;
 }
 
-[data-control=color] .bricks-control-popup .color-palette.grid {
+div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup .color-palette.grid {
     padding: 32px;
     gap: 12px;
     grid-template-columns: repeat(auto-fit, minmax(32px, 1fr));
     max-height: 55vh;
+    scrollbar-color: var(--builder-color-accent) var(--builder-bg-3);
+    scrollbar-width: thick;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-[data-control=color] .bricks-control-popup .color-palette.grid li {
+div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup .color-palette.grid li {
     aspect-ratio: 1/1;
 }
 
-/*[data-control=color] .bricks-control-popup .sliders,*/
-/*[data-control=color] .bricks-control-popup .color-inputs,*/
-/*[data-control=color] .bricks-control-popup .color-modes,*/
-/*[data-control=color] .bricks-control-popup .color-palette-selector,*/
-/*[data-control=color] .bricks-control-popup .button-group,*/
-/*[data-control=color] .bricks-control-popup [data-control=info],*/
-/*[data-control=color] .bricks-control-popup [data-control=file-import]{*/
-/*    grid-column: 2;*/
-/*}*/
 
-[data-control=color] .bricks-control-popup > :not(.color-palette):not([data-control=file-import]) {
+div.control.control-color.gau-color-palette-popup-active [data-control="color"] .bricks-control-popup > :not(.color-palette-list):not(.color-palette-grid) {
     grid-column: 2;
 }
 
-[data-control=color] .bricks-control-popup [data-control=file-import] {
-    grid-row: 1;
+div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup > .color-palette-list,
+div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup > .color-palette-grid {
+    grid-column: 1;
+    grid-row: 1 / 8;
 }
 
-[data-control=color] .bricks-control-popup .color-modes::before {
+div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup .color-modes::before {
     left: 0;
     right: 0;
 }
 
-[data-control=color] .bricks-control-popup [data-control=select] .dropdown {
+div.control.control-color.gau-color-palette-popup-active [data-control=color] .bricks-control-popup [data-control=select] .dropdown {
     max-height: 240px;
 }

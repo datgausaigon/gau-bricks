@@ -1,0 +1,177 @@
+/* --- COMPACT ELEMENTS PANEL (FINAL USER APPROVED FIX) --- */
+
+/* 1. CONTAINER - Target Elements Panel Only */
+#bricks-panel-elements-categories[data-tab="content"] .sortable-wrapper,
+#bricks-panel-elements-categories[data-tab="style"] .sortable-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    padding: 0 10px 10px !important;
+    margin: 0 !important;
+}
+
+/* 2. ELEMENT ITEM */
+#bricks-panel-elements-categories[data-tab="content"] li.bricks-add-element,
+#bricks-panel-elements-categories[data-tab="style"] li.bricks-add-element {
+    width: 100% !important;
+    background-color: var(--builder-bg-2) !important;
+    border: 1px solid transparent !important;
+    border-radius: var(--builder-border-radius) !important;
+    padding: 6px 10px !important;
+    margin-bottom: 4px !important;
+    min-height: 38px !important;
+    height: auto !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease;
+    
+    display: flex !important;
+    align-items: center !important;
+    position: relative !important;
+}
+
+#bricks-panel-elements-categories[data-tab="content"] li.bricks-add-element:hover,
+#bricks-panel-elements-categories[data-tab="style"] li.bricks-add-element:hover {
+    background-color: var(--builder-bg-accent, #3b3b3b) !important;
+}
+
+/* 3. ELEMENT DATA - Flex Container for Icon + Label */
+#bricks-panel-elements-categories[data-tab="content"] li.bricks-add-element .element-data,
+#bricks-panel-elements-categories[data-tab="style"] li.bricks-add-element .element-data {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    flex-direction: row !important;
+}
+
+/* 4. ICON (Left) */
+#bricks-panel-elements-categories[data-tab="content"] .bricks-add-element .element-icon,
+#bricks-panel-elements-categories[data-tab="style"] .bricks-add-element .element-icon {
+    font-size: 14px !important;
+    line-height: 1 !important;
+    margin: 0 10px 0 0 !important;
+    width: 16px !important;
+    height: 16px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    color: inherit;
+    flex-shrink: 0 !important;
+}
+
+#bricks-panel-elements-categories[data-tab="content"] li.bricks-add-element:hover .element-icon,
+#bricks-panel-elements-categories[data-tab="style"] li.bricks-add-element:hover .element-icon {
+    opacity: 1;
+    color: #fff;
+}
+
+/* 5. LABEL (Right) */
+#bricks-panel-elements-categories[data-tab="content"] .bricks-add-element .element-label,
+#bricks-panel-elements-categories[data-tab="style"] .bricks-add-element .element-label {
+    flex: 1 !important;
+    width: auto !important;
+    font-size: 13px !important;
+    text-align: left !important;
+    line-height: normal !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    padding: 0 !important;
+    color: inherit;
+    font-weight: 500 !important;
+    display: block !important;
+    box-shadow: none !important;
+}
+
+#bricks-panel-elements-categories[data-tab="content"] li.bricks-add-element:hover .element-label,
+#bricks-panel-elements-categories[data-tab="style"] li.bricks-add-element:hover .element-label {
+    color: #fff;
+}
+
+/* --- ACTION BUTTONS --- */
+
+/* Wrapper */
+#bricks-panel-elements-categories[data-tab="content"] .bricks-add-element .element-actions,
+#bricks-panel-elements-categories[data-tab="style"] .bricks-add-element .element-actions {
+    position: absolute !important;
+    right: 6px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    z-index: 20;
+    pointer-events: none;
+    height: 100% !important;
+}
+
+#bricks-panel-elements-categories[data-tab="content"] .bricks-add-element .element-actions > *,
+#bricks-panel-elements-categories[data-tab="style"] .bricks-add-element .element-actions > * {
+    pointer-events: auto !important;
+}
+
+/* Common Button Style */
+#bricks-panel-elements-categories[data-tab="content"] .bricks-add-element .pin,
+#bricks-panel-elements-categories[data-tab="content"] .bricks-add-element .layout-inserter,
+#bricks-panel-elements-categories[data-tab="style"] .bricks-add-element .pin,
+#bricks-panel-elements-categories[data-tab="style"] .bricks-add-element .layout-inserter {
+    position: relative !important;
+    cursor: pointer;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    height: 20px !important;
+    width: 20px !important;
+    flex-shrink: 0 !important;
+    box-shadow: none !important;
+    font-size: 13px !important;
+}
+
+/* Pin - Hover Only */
+#bricks-panel-elements-categories[data-tab="content"] .bricks-add-element .pin,
+#bricks-panel-elements-categories[data-tab="style"] .bricks-add-element .pin {
+    opacity: 0;
+    transition: opacity 0.2s;
+    color: inherit;
+}
+
+#bricks-panel-elements-categories[data-tab="content"] li.bricks-add-element:hover .pin,
+#bricks-panel-elements-categories[data-tab="style"] li.bricks-add-element:hover .pin {
+    opacity: 1;
+}
+
+#bricks-panel-elements-categories[data-tab="content"] li.bricks-add-element:hover .pin:hover,
+#bricks-panel-elements-categories[data-tab="style"] li.bricks-add-element:hover .pin:hover {
+    color: var(--builder-color-accent);
+}
+
+/* LAYOUT BUTTON - ALWAYS VISIBLE */
+#bricks-panel-elements-categories[data-tab="content"] .bricks-add-element .layout-inserter,
+#bricks-panel-elements-categories[data-tab="style"] .bricks-add-element .layout-inserter {
+    opacity: 1 !important;
+    order: -1;
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Layout Button Hover */
+#bricks-panel-elements-categories[data-tab="content"] .bricks-add-element .layout-inserter:hover,
+#bricks-panel-elements-categories[data-tab="style"] .bricks-add-element .layout-inserter:hover {
+    color: var(--builder-color-accent) !important;
+}
+
+/* Force Icon Display (Fixed: No Fill) */
+#bricks-panel-elements-categories[data-tab="content"] .bricks-add-element .layout-inserter svg,
+#bricks-panel-elements-categories[data-tab="content"] .bricks-add-element .layout-inserter i,
+#bricks-panel-elements-categories[data-tab="style"] .bricks-add-element .layout-inserter svg,
+#bricks-panel-elements-categories[data-tab="style"] .bricks-add-element .layout-inserter i {
+    width: 14px !important;
+    height: 14px !important;
+    font-size: 14px !important;
+    display: block !important;
+    visibility: visible !important;
+    /* REMOVED FILL: currentColor to fix visibility issue */
+}

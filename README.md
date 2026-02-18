@@ -1,4 +1,4 @@
-# 🐻 Gấu Bricks — Child Theme for Bricks Builder  
+# 🐻 Gấu Bricks — Child Theme for Bricks Builder
 
 <img width="1200" height="900" alt="screenshot" src="https://github.com/user-attachments/assets/764bcd6b-d807-43c5-8c7c-490ef4687821" />  
 
@@ -18,21 +18,21 @@ Its main goal is to refine the page builder features and add small, useful enhan
 | Thành phần      | Yêu cầu tối thiểu | Đã kiểm tra với           |
 |-----------------|-------------------|---------------------------|
 | PHP             | ≥ 8.2             | 8.2.x                     |
-| WordPress       | ≥ 6.8.3           | 6.8.3                     |
-| Bricks Builder  | 2.1.2             | Gấu Bricks v1.0.3         |
+| WordPress       | ≥ 6.9.1           | 6.9.1                     |
+| Bricks Builder  | 2.2.0             | Gấu Bricks v1.0.9         |
 | Trình duyệt     | Chrome, Firfox    | Không tương thích Safari  |
 
 🇬🇧  
 | Component       | Minimum Required | Tested With                |
 |-----------------|------------------|----------------------------|
 | PHP             | ≥ 8.2            | 8.2.x                      |
-| WordPress       | ≥ 6.8.3          | 6.8.3                      |
-| Bricks Builder  | 2.1.2            | Gấu Bricks v1.0.3          |
+| WordPress       | ≥ 6.9.1          | 6.9.1                      |
+| Bricks Builder  | 2.2.0            | Gấu Bricks v1.0.9          |
 | Browser         | Chrome, Firfox   | Not compatible with Safari |
 
 ---  
-  
-## 🛢️ Cơ sở dữ liệu & Tính toàn vẹn dữ liệu / Database & Data Integrity  
+
+## 🛢️ Cơ sở dữ liệu & Tính toàn vẹn dữ liệu / Database & Data Integrity
 
 🇻🇳  
 | Thành phần | Trạng thái |
@@ -60,8 +60,10 @@ Its main goal is to refine the page builder features and add small, useful enhan
 
 ---  
 
-## ⚙️ Các tính năng / Features  
+## ⚙️ Các tính năng / Features
+
 🇻🇳 
+
 - Cửa sổ bật lên (Popup) cho bảng chọn màu (Color Palette).
 - Tối ưu đổi tên phần tử (Element) trong bảng điều khiển Cấu trúc (Structure Panel):
   - **Định dạng trực quan** khi đang sửa tên: làm nổi bật phần tử đang sửa tên để dễ nhận biết.
@@ -75,17 +77,19 @@ Its main goal is to refine the page builder features and add small, useful enhan
 - Tùy chọn chỉnh giao diện Việt Nam (Vietnam Theme cho Builder).  
 
 🇬🇧  
-- Popup for the Color Palette selector.
+
+- Popup for the Color Palette selector
 - Optimized element renaming in the Structure Panel:  
   - **Visual styling** while renaming: highlight the element being renamed for better visibility.
   - **Lock drag/drop** of elements while renaming.
   - Allow **text selection** (highlight part or full text when renaming).
-  - Allow **paste text** via Ctrl/Cmd+V and Context Menu during renaming.
+  - Allow **paste** via Ctrl/Cmd+V and Context Menu during renaming.
   - Automatically **remove drag-related classes** while renaming to prevent conflicts.
   - **Restore drag-related classes** after renaming so drag/drop works normally.
 - Optional scrollbar customization for Builder panels.
 - Popup for the Element Rich Text (Text Edit – TinyMCE).
 - Optional Vietnamese UI theme for the Builder.  
+
 ---
 
 ## 🛠️ Hướng dẫn sử dụng Filter / How to use Filters
@@ -96,19 +100,13 @@ Thêm các filter này trong plugin riêng hoặc trong file `functions.php` c�
 
 ```php
 // Bật giao diện Việt Nam cho Builder
-add_filter( 'gau/bricks/builder/enable_vietnam_theme', '__return_true' );
+add_filter( 'gau/bricks/enable_builder_vietnam_theme', '__return_true' );
 
 // Bật scrollbar tùy chỉnh cho panel
-add_filter( 'gau/bricks/builder/enable_panel_scrollbar', '__return_true' );
+add_filter( 'gau/bricks/enable_builder_panel_scrollbar', '__return_true' );
 
 // Bật tối ưu Element Text
-add_filter( 'gau/bricks/builder/enable_custom_element_text', '__return_true' );
-
-// Bật Cửa sổ bật lên (Popup) cho bảng chọn màu (Color Palette)
-add_filter( 'gau/bricks/builder/enable_color_palette_popup', '__return_true' );
-
-// Bật Tối ưu đổi tên phần tử (Element) trong bảng điều khiển Cấu trúc (Structure Panel)
-add_filter( 'gau/bricks/builder/enable_custom_structure_item_renaming', '__return_true' );
+add_filter( 'gau/bricks/enable_custom_element_text', '__return_true' );
 ```
 
 Mặc định các filter trả về `false` (tắt). Dùng `__return_true` để bật.
@@ -119,24 +117,19 @@ Add these filters in your own plugin or in another child theme’s `functions.ph
 
 ```php
 // Enable Vietnamese theme for Builder
-add_filter( 'gau/bricks/builder/enable_vietnam_theme', '__return_true' );
+add_filter( 'gau/bricks/enable_builder_vietnam_theme', '__return_true' );
 
 // Enable custom scrollbar for Builder panels
-add_filter( 'gau/bricks/builder/enable_panel_scrollbar', '__return_true' );
+add_filter( 'gau/bricks/enable_builder_panel_scrollbar', '__return_true' );
 
 // Enable Element Text optimization
-add_filter( 'gau/bricks/builder/enable_custom_element_text', '__return_true' );
-
-// Popup for the Color Palette selector
-add_filter( 'gau/bricks/builder/enable_color_palette_popup', '__return_true' );
-
-// Optimized element renaming in the Structure Panel
-add_filter( 'gau/bricks/builder/enable_custom_structure_item_renaming', '__return_true' );
+add_filter( 'gau/bricks/enable_custom_element_text', '__return_true' );
 ```
 
 By default, these filters return `false` (disabled). Use `__return_true` to activate.
 
 ---
+
 Chúc mọi điều tốt đẹp.  
 Thanks.  
 🐻

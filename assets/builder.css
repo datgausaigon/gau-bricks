@@ -1,9 +1,18 @@
 :root {
     --builder-bg-green: #02312f;
     --builder-color-green: #00b6ad;
+    --builder-popup-box-shadow: inset 0 0 0 1px var(--builder-color-accent);
 }
 
 /* Builder WP Media Popup */
+#emojiSwitcherOptions {
+    display: none !important;
+}
+
+.media-modal.wp-core-ui .media-modal-close {
+    border: 1px dotted;
+}
+
 .media-modal.wp-core-ui .media-modal-close .media-modal-icon {
     position: absolute;
     top: 50%;
